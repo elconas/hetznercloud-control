@@ -1,0 +1,19 @@
+# This is a systemd environment file, not a shell script.
+# It provides settings for "/lib/systemd/system/qemu-guest-agent.service".
+
+# Comma-separated blacklist of RPCs to disable, or empty list to enable all.
+#
+# You can get the list of RPC commands using "qemu-ga --blacklist='?'".
+# There should be no spaces between commas and commands in the blacklist.
+BLACKLIST_RPC=guest-exec,guest-exec-status,guest-file-close,guest-file-flush,guest-file-open,guest-file-read,guest-file-seek,guest-file-write,guest-get-fsinfo,guest-get-memory-block-info,guest-get-memory-blocks,guest-get-time,guest-get-vcpus,guest-info,guest-network-get-interfaces,guest-set-memory-blocks,guest-set-time,guest-set-user-password,guest-set-vcpus
+
+# Fsfreeze hook script specification.
+#
+# FSFREEZE_HOOK_PATHNAME=/dev/null           : disables the feature.
+#
+# FSFREEZE_HOOK_PATHNAME=/path/to/executable : enables the feature with the
+# specified binary or shell script.
+#
+# FSFREEZE_HOOK_PATHNAME=                    : enables the feature with the
+# default value (invoke "qemu-ga --help" to interrogate).
+FSFREEZE_HOOK_PATHNAME=/etc/qemu-ga/fsfreeze-hook
