@@ -1,4 +1,4 @@
-## Configure Hetznercloud Sepcifics 
+## Configure Hetznercloud Sepcifics
 
 ## FIXME: root usernaname and password
 ## FIXME: hetznercloud cloud init driver and config
@@ -22,4 +22,7 @@ class profile::hetznercloud (
 
   Kernel_parameter <| |> ~> Exec['update-grub']
   Grub_config <| |> ~> Exec['update-grub']
+
+  include ::profile::hetznercloud::cloud_init
+
 }
