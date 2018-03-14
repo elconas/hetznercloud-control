@@ -18,4 +18,9 @@ class profile::hardening (
     }
   }
 
+  # avoid password leakage
+  file { [ '/root/anaconda-ks.cfg', '/root/original-ks.cfg' ]:
+    ensure => 'absent',
+  }
+
 }
