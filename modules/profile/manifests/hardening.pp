@@ -12,7 +12,7 @@ class profile::hardening (
     use_pam => true,
   }
 
-  [ 'rpcbind' ].each |String $pkg| {
+  [ 'quota', 'rpcbind' ].each |String $pkg| {
     package { $pkg:
       ensure => absent,
     }
