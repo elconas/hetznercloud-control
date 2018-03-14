@@ -11,9 +11,12 @@ class profile::hetznercloud::kernel (
     value => 'tty1',
   }
 
-  # Remove Kickstart
-  kernel_parameter { [ 'ip', 'rd.neednet' ]:
-    ensure => absent,
+  # Add needed parameters
+  #kernel_parameter { 'ip':
+#    ensure => 'dhcp',
+#  }
+  kernel_parameter { 'rd.neednet':
+    ensure => '1',
   }
 
   ensure_resource('exec','update-grub', {

@@ -6,3 +6,6 @@ end
 describe sshd_config do
    its('PermitRootLogin') { should eq('without-password') }
 end
+describe sshd_config do
+   its('PasswordAuthentication') { should eq('no') }
+end
