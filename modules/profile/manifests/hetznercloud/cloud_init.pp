@@ -13,6 +13,7 @@ class profile::hetznercloud::cloud_init (
     '/etc/cloud/cloud.cfg.d/90-hetznercloud.cfg',
     '/etc/cloud/cloud.cfg.d/92-hetznercloud-ds.cfg',
     '/etc/cloud/cloud.cfg.d/93-hetznercloud.cfg',
+    '/etc/cloud/cloud.cfg.d/94-elconas.cfg',
     '/usr/lib/python2.7/site-packages/cloudinit/sources/helpers/hetzner.py',
     '/usr/lib/python2.7/site-packages/cloudinit/sources/DataSourceHetzner.py'
   ].each |String $file| {
