@@ -11,6 +11,11 @@ class profile::hetznercloud::kernel (
     value => 'tty1',
   }
 
+  # Remove Kickstart
+  kernel_parameter { [ 'ip', 'rd.neednet' ]:
+    ensure => absent,
+  }
+
   ensure_resource('exec','update-grub', {
     command     => '/usr/sbin/grub2-mkconfig --output /etc/grub2.cfg',
     refreshonly => true,
