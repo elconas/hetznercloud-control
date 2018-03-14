@@ -28,9 +28,9 @@ class profile::luks_ssh (
   kernel_parameter { 'rd.neednet':
     value => '1',
   }
-  kernel_parameter { 'ip':
-    value => 'dhcp',
-  }
+  #kernel_parameter { 'ip':
+  #  value => 'dhcp',
+  #}
   ensure_resource('exec','update-grub', {
     command     => '/usr/sbin/grub2-mkconfig --output /etc/grub2.cfg',
     refreshonly => true,
@@ -78,5 +78,3 @@ class profile::luks_ssh (
     }
   }
 }
-
-
