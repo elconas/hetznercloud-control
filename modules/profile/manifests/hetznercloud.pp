@@ -10,8 +10,8 @@ class profile::hetznercloud (
   include ::profile::hetznercloud::qemu_gest_agent
   include ::profile::hetznercloud::grub
 
-  file { '/etc/rc.local':
-    source  => "puppet:///modules/profile/hcloud/etc/rc.local",
+  file { '/etc/rc.d/rc.local':
+    source  => "puppet:///modules/profile/hcloud/etc/rc.d/rc.local",
     mode    => '0755',
     owner   => 0,
     group   => 0,
